@@ -1,31 +1,42 @@
-import random
-
-potential_words = ["broke"]
-
-word = random.choice(potential_words)
-
-# Use to test your code:
-# print(word)
+word = ["b","r","o","k","e"]
+correct = word
+letter_guess = ''
+print("Welcome to 'Guess the Word' Game!")
+print('You have 7 attempts at guessing letters in the word')
+print("Let's begin! Press enter.")
+if len(guess_letter) != 1:
+        print ("Please guess one letter at a time")
 
 # Converts the word to lowercase
-word = word.lower()
+
 
 # Make it a list of letters for someone to guess
-current_word = ["_", "_"] # TIP: the number of letters should match the word
+
 
 # Some useful variables
 guesses = []
 maxfails = 7
 fails = 0
 
+guess = input()
+
 while fails < maxfails:
 	guess = input("Guess a letter: ")
 
-	# check if the guess is valid: Is it one letter? Have they already guessed it?
+if guess in word:
+    print("Correct!")
+    store_letter += guess
+if guess not in word:
+    print("Try again!")
+    fails += 1
+if fails == 2:
+    print("Would you like a clue? Type 'y' for yes and 'n' for no.")
+    clue_request = input()
+if clue_request == 'y':
+    print("CLUE: We have no money. We are __")
+if clue_request == 'n':
+    print("You're very brave!")
+print(current_word)
 
-	# check if the guess is correct: Is it in the word? If so, reveal the letters!
-
-	print(current_word)
-
-	fails = fails+1
-	print("You have " + str(maxfails - fails) + " tries left!")
+fails = fails + 1
+print("You have " + str(maxfails - fails) + " tries left!")
