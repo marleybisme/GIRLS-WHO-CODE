@@ -3,8 +3,7 @@ correct = word
 print("Welcome to 'Guess the Word' Game!")
 print('You have 7 attempts at guessing letters in the word')
 print("Let's begin! Press enter.")
-if len(input()) != 1:
-        print ("Please guess one letter at a time")
+
 
 
 maxfails = 7
@@ -17,7 +16,6 @@ while fails < maxfails:
 
 if guess in word:
     print("Correct!")
-    store_letter += guess
 if guess not in word:
     print("Try again!")
     fails += 1
@@ -26,9 +24,8 @@ if fails == 2:
     clue_request = input()
 if clue_request == 'y':
     print("CLUE: We have no money. We are __")
-if clue_request == 'n':
+elif clue_request == 'n':
     print("You're very brave!")
-print(current_word)
 
-fails = fails + 1
+
 print("You have " + str(maxfails - fails) + " tries left!")
