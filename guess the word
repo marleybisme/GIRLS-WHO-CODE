@@ -3,7 +3,7 @@ correct = word
 print("Welcome to 'Guess the Word' Game!")
 print('You have 7 attempts at guessing letters in the word')
 print("Let's begin! Press enter.")
-if len(guess) != 1:
+if len(input()) != 1:
         print ("Please guess one letter at a time")
 
 
